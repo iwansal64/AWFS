@@ -24,7 +24,7 @@ void loop() {
 
 
 
-#elif defined TEST_COMMUNICATION
+#elif defined TEST_COMMUNICATION /// ✅ TESTED!
 
 uint8_t counter = 0;
 
