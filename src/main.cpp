@@ -4,23 +4,36 @@
 #include <indicator_manager.h>
 #include <fast_code.h>
 
-//? Uncomment this to test all functions
-// #define TEST
+//? Uncomment this to test functions
+// #define BUILD
+// #define TEST_COMMUNICATION
+// #define TEST_WATER_FLOW_SENSOR
+// #define TEST_RELAY_FROM_TORRENT_SENSOR
+// #define TEST_DISPLAY
+// #define TEST_SELENOID
+// #define TEST_RUN
+#define TEST_EXPERIMENTS
 
+#ifdef TEST_EXPERIMENTS
 
-#ifdef TEST
+#include <experiemnts_code.h>
+
+#elif defined TEST_COMMUNICATION
 
 void setup() {
-
+    Serial.begin(9600);
 }
 
 void loop() {
-    
+    Serial.println("TEST_0");
+    delay(500);
+    Serial.println("TEST_1");
+    delay(500);
 }
 
 
 
-#else
+#elif defined BUILD
 
 void setup() {
 
