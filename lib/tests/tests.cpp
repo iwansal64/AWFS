@@ -41,7 +41,7 @@ void loop() {
 
 
 
-#elif defined TEST_WATER_FLOW_SENSOR
+#elif defined TEST_WATER_FLOW_SENSOR /// ✅ TESTED!
 
 volatile int pulseCount;   // Counter for the flow sensor pulses
 float flowRate;            // Flow rate in L/min
