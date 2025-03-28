@@ -24,7 +24,6 @@
 #define AND_THEN
 #define LASTLY
 #define ALSO &&
-#define ƒ
 
 //* Builtin Arduino extender
 #define WAIT_A_SECOND delay(1000);

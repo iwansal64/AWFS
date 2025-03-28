@@ -37,10 +37,10 @@ void loop() {
     //- ACTION:     make sure to turn off the pump and then fill the pump with water through selenoid
     IF ( ( VOLTAGE_OF TORRENT_SENSOR_THROUGH_RELAY IS_HIGH ) AND ( STATE_OF_PUMP IS_NOT_FILLED ) ) THEN
     
-        ƒ TURN_PUMP       OFF       AND_THEN
-        ƒ WAIT_A_MOMENT             LASTLY
-        ƒ TURN_SELENOID   OPEN
-        ƒ CHANGE_STATE_OF_PUMP      TO_FILLING
+        TURN_PUMP       OFF       AND_THEN
+        WAIT_A_MOMENT             LASTLY
+        TURN_SELENOID   OPEN
+        CHANGE_STATE_OF_PUMP      TO_FILLING
     
     END_CASE
     
@@ -49,10 +49,10 @@ void loop() {
     //- ACTION:     close the selenoid and then turn on the pump
     IF ( ( WATER_IN_PUMP IS_FULL ) AND ( STATE_OF_PUMP IS_FILLING )  ) THEN
 
-        ƒ TURN_SELENOID   CLOSE     AND_THEN
-        ƒ WAIT_A_SECOND             LASTLY
-        ƒ TURN_PUMP       ON
-        ƒ CHANGE_STATE_OF_PUMP      TO_FILLED
+        TURN_SELENOID   CLOSE     AND_THEN
+        WAIT_A_SECOND             LASTLY
+        TURN_PUMP       ON
+        CHANGE_STATE_OF_PUMP      TO_FILLED
     
     END_CASE
     
@@ -61,9 +61,9 @@ void loop() {
     //- ACTION:     turn off the pump and make sure the selenoid still closed
     IF ( ( VOLTAGE_OF TORRENT_SENSOR_THROUGH_RELAY IS_LOW ) AND ( STATE_OF_PUMP IS_FILLED ) ) THEN
 
-        ƒ TURN_PUMP       OFF       AND_THEN
-        ƒ TURN_SELENOID   CLOSE
-        ƒ CHANGE_STATE_OF_PUMP      TO_EMPTY
+        TURN_PUMP       OFF       AND_THEN
+        TURN_SELENOID   CLOSE
+        CHANGE_STATE_OF_PUMP      TO_EMPTY
 
     END_CASE
 
