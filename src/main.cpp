@@ -18,7 +18,7 @@
 
 #include <tests.h>
 
-#else
+#else // Below is the main program
 
 void setup() {
 
