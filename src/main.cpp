@@ -6,13 +6,6 @@
 
 //? Uncomment this to test functions
 // #define BUILD
-// #define TEST_COMMUNICATION
-#define TEST_WATER_FLOW_SENSOR
-// #define TEST_RELAY_FROM_TORRENT_SENSOR
-// #define TEST_DISPLAY
-// #define TEST_SELENOID
-// #define TEST_RUN
-// #define TEST_EXPERIMENTS
 
 #ifndef BUILD
 

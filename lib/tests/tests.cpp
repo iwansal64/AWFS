@@ -4,6 +4,14 @@
 #include <indicator_manager.h>
 #include <tests.h>
 
+// #define TEST_COMMUNICATION
+#define TEST_WATER_FLOW_SENSOR
+// #define TEST_RELAY_FROM_TORRENT_SENSOR
+// #define TEST_DISPLAY
+// #define TEST_SELENOID
+// #define TEST_RUN
+// #define TEST_EXPERIMENTS
+
 #ifdef TEST_EXPERIMENTS
 
 void setup() {
@@ -47,7 +55,7 @@ void IRAM_ATTR pulseCounter() {
 
 void setup() {
     Serial.begin(9600);
-    Serial.println("TEST_WATER_FLOW_SENSOR...")
+    Serial.println("TEST_WATER_FLOW_SENSOR...");
     
     pinMode(WATER_FLOW_SENSOR, INPUT_PULLUP);
     attachInterrupt(digitalPinToInterrupt(WATER_FLOW_SENSOR), pulseCounter, FALLING);
@@ -85,7 +93,7 @@ void loop() {
 
 void setup() {
     Serial.begin(9600);
-    Serial.println("TEST_RELAY_FROM_TORRENT_SENSOR...")
+    Serial.println("TEST_RELAY_FROM_TORRENT_SENSOR...");
 }
 
 void loop() {
@@ -159,7 +167,7 @@ void loop() {
 
 void setup() {
     Serial.begin(9600);
-    Serial.println("TEST_SELENOID...")
+    Serial.println("TEST_SELENOID...");
 }
 
 void loop() {
@@ -175,7 +183,7 @@ void loop() {
 
 void setup() {
     Serial.begin(9600);
-    Serial.println("TEST_RUN...")
+    Serial.println("TEST_RUN...");
 }
 
 void loop() {
