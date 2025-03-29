@@ -5,9 +5,9 @@
 #include <tests.h>
 
 // #define TEST_COMMUNICATION
-#define TEST_WATER_FLOW_SENSOR
+// #define TEST_WATER_FLOW_SENSOR
 // #define TEST_RELAY_FROM_TORRENT_SENSOR
-// #define TEST_DISPLAY
+#define TEST_DISPLAY
 // #define TEST_SELENOID
 // #define TEST_RUN
 // #define TEST_EXPERIMENTS
@@ -105,60 +105,13 @@ void loop() {
 
 #elif defined TEST_DISPLAY
 
-#include <SPI.h>
-#include <Wire.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-
-#define SCREEN_WIDTH 128 // OLED display width, in pixels
-#define SCREEN_HEIGHT 32 // OLED display height, in pixels
-#define OLED_RESET -1
-
-#define SCREEN_ADDRESS 0x3D
-
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-
 void setup() {
     Serial.begin(9600);
     Serial.println("TEST_DISPLAY...");
-    delay(1000);
-
-    // SSD1306_SWITCHCAPVCC = generate display voltage from 3.3V internally
-    if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
-        Serial.println(F("SSD1306 allocation failed"));
-        for(;;); // Don't proceed, loop forever
-    }
-    Serial.println(F("SSD1306 allocation success!!!"));
-
-    // Show initial display buffer contents on the screen --
-    // the library initializes this with an Adafruit splash screen.
-    display.display();
 }
 
 void loop() {
     delay(2000); // Pause for 2 seconds
-
-    // Clear the buffer
-    display.clearDisplay();
-
-    // Draw a single pixel in white
-    display.drawPixel(10, 10, SSD1306_WHITE);
-
-    // Show the display buffer on the screen. You MUST call display() after
-    // drawing commands to make them visible on screen!
-    display.display();
-    delay(2000);
-    
-    // Clear the buffer
-    display.clearDisplay();
-
-    // Draw a single pixel in white
-    display.drawPixel(10, 10, SSD1306_BLACK);
-
-    // Show the display buffer on the screen. You MUST call display() after
-    // drawing commands to make them visible on screen!
-    display.display();
-    delay(2000);
 }
 
 
