@@ -7,15 +7,25 @@
 // #define TEST_COMMUNICATION
 // #define TEST_WATER_FLOW_SENSOR
 // #define TEST_RELAY_FROM_TORRENT_SENSOR
-#define TEST_DISPLAY
+// #define TEST_DISPLAY
 // #define TEST_SELENOID
 // #define TEST_RUN
-// #define TEST_EXPERIMENTS
+#define TEST_EXPERIMENTS
 
 #ifdef TEST_EXPERIMENTS
 
 void setup() {
+    Serial.begin(9600);
 
+    if(STATE_OF_PUMP == 0) {
+        Serial.println("NOL");
+    }
+    
+    SET_STATE_OF_PUMP_TO(3)
+
+    if(STATE_OF_PUMP == 3) {
+        Serial.println("THREE");
+    }
 }
 
 void loop() {
