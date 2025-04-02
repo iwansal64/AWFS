@@ -14,13 +14,26 @@
 
 #ifdef TEST_EXPERIMENTS
 
-void setup() {
+#include <Wire.h>
 
+void setup() {
+  Wire.begin();
+  Serial.begin(9600);
+  Serial.println("Scanning I2C devices...");
+
+  for (byte address = 1; address < 127; address++) {
+    Wire.beginTransmission(address);
+    if (Wire.endTransmission() == 0) {
+      Serial.print("Found device at: 0x");
+      Serial.println(address, HEX);
+      delay(10);
+    }
+  }
 }
 
 void loop() {
-    
 }
+
 
 
 
@@ -108,10 +121,13 @@ void loop() {
 void setup() {
     Serial.begin(9600);
     Serial.println("TEST_DISPLAY...");
+    SEND_BYTE_I2C_LCD(0b00101000, false)
+    delay(2000); // Pause for 2 seconds
+    HOME_LCD()
+    LCD_PRINT_CHAR('a')
 }
 
 void loop() {
-    delay(2000); // Pause for 2 seconds
 }
 
 
