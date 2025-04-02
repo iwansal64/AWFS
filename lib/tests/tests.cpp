@@ -121,10 +121,20 @@ void loop() {
 void setup() {
     Serial.begin(9600);
     Serial.println("TEST_DISPLAY...");
-    SEND_BYTE_I2C_LCD(0b00101000, false)
     delay(2000); // Pause for 2 seconds
-    HOME_LCD()
-    LCD_PRINT_CHAR('a')
+    LCD_SETUP();
+    HOME_LCD();
+    CLEAR_LCD();
+    LCD_PRINT("TEST 1");
+    delay(3000);
+    CLEAR_LCD();
+    LCD_PRINT("TEST 2");
+    delay(2000);
+    CLEAR_LCD();
+    LCD_PRINT("TEST 3");
+    delay(1000);
+    CLEAR_LCD();
+    LCD_PRINT("DUAR!");
 }
 
 void loop() {
